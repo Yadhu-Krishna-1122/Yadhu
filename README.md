@@ -21,28 +21,6 @@ The objective of this assignment is to understand and implement:
 - Lists, Tuples, Dictionaries and Sets
 - String Manipulation
 ---
-
-#  Repository Structure
-
-
-Python-Tasks
-
-Q1.py
-Q2.py
-Q3.py
-Q5.py
-Q6.py
-Q8.py
-Q9.py
-Q11.py
-Q13.py
-Q14.py
-Q15.py
-README.md
-
-
-
-
 #  Question-wise Description
 
 ###  Q1
