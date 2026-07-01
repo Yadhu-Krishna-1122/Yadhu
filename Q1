@@ -1,0 +1,23 @@
+# Q1 - Drone Movement Program
+
+# Display the menu
+print("Drone Movement Options")
+print("1. Roll")
+print("2. Pitch")
+print("3. Yaw")
+
+# Take input from the user
+choice = int(input("Enter the option number: "))
+
+# Check the selected option
+if choice == 1:
+    print("Slow down left motors for left roll or right motors for right roll.")
+
+elif choice == 2:
+    print("Increase front motors or rear motors for pitch movement.")
+
+elif choice == 3:
+    print("Increase clockwise or anticlockwise motors for yaw movement.")
+
+else:
+    print("Invalid option entered.")
