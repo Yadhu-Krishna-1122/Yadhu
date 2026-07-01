@@ -1,0 +1,59 @@
+# Q9 - Auto Return-To-Home System
+
+# Store drone state
+drone_state = {
+    "battery": 18,
+    "altitude": 95,
+    "signal_strength": 40,
+    "distance_from_home": 850,
+    "wind_speed": 38,
+    "obstacle_detected": True
+}
+
+# Variable to check if any alert occurs
+alert = False
+
+# Check battery
+if drone_state["battery"] < 20:
+    print("CRITICAL: RTH triggered — Low Battery")
+    alert = True
+
+# Check signal
+if drone_state["signal_strength"] < 30:
+    print("WARNING: RTH triggered — Signal Lost")
+    alert = True
+
+# Check wind
+if drone_state["wind_speed"] > 35:
+    print("WARNING: RTH triggered — High Wind")
+    alert = True
+
+# Check obstacle
+if drone_state["obstacle_detected"] == True:
+    print("CAUTION: Obstacle detected — Rerouting")
+    alert = True
+
+# If nothing happens
+if alert == False:
+    print("All systems nominal")
+
+print("\nDrone Descending...\n")
+
+# Store altitude and battery
+altitude = drone_state["altitude"]
+
+battery = drone_state["battery"]
+
+# Descend until altitude becomes zero
+while altitude > 0:
+
+    print("Altitude =", altitude, "m   Battery =", battery, "%")
+
+    altitude = altitude - 15
+
+    if altitude < 0:
+        altitude = 0
+
+    battery = battery - 1
+
+print("Altitude =", altitude, "m   Battery =", battery, "%")
