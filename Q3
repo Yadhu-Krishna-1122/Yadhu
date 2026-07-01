@@ -1,0 +1,45 @@
+# Q3 - Drone Specifications
+
+# Store drone specifications
+max_takeoff_weight = 4.5
+frame_weight = 1.2
+battery_weight = 0.8
+num_propellers = 4
+motor_weight = 0.075
+is_gps_enabled = True
+gps_module_weight = 0.05
+
+# Calculate total fixed weight
+total_fixed_weight = (
+    frame_weight
+    + battery_weight
+    + (motor_weight * num_propellers)
+)
+
+# Add GPS weight only if GPS is enabled
+if is_gps_enabled:
+    total_fixed_weight = total_fixed_weight + gps_module_weight
+
+# Calculate maximum payload
+payload = max_takeoff_weight - total_fixed_weight
+
+# Display payload
+print("Maximum Payload =", payload, "kg")
+
+# Display data types
+print(type(max_takeoff_weight))
+print(type(frame_weight))
+print(type(battery_weight))
+print(type(num_propellers))
+print(type(motor_weight))
+print(type(is_gps_enabled))
+print(type(gps_module_weight))
+
+# Check if payload can carry a 1.8 kg camera
+print(payload >= 1.8)
+
+# Convert takeoff weight into grams
+max_takeoff_weight_grams = int(max_takeoff_weight * 1000)
+
+# Print weight in grams
+print("Takeoff Weight =", max_takeoff_weight_grams, "grams")
