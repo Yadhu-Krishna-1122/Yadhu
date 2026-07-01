@@ -1,0 +1,46 @@
+# Q5 - Flight Path Analyser
+
+# Store altitude readings
+altitudes = [0, 15, 42, 78, 120, 118, 115, 50, 20, 0]
+
+# Find maximum altitude
+maximum = max(altitudes)
+
+# Find index of maximum altitude
+index = altitudes.index(maximum)
+
+print("Maximum Altitude =", maximum)
+
+print("Occurred at second =", index)
+
+# Calculate average altitude
+average = round(sum(altitudes) / len(altitudes), 2)
+
+print("Average Altitude =", average)
+
+# Create climb rate list
+climb_rates = []
+
+# Calculate climb rates
+for i in range(len(altitudes) - 1):
+    climb = altitudes[i + 1] - altitudes[i]
+    climb_rates.append(climb)
+
+# Print climb rates
+print("Climb Rates =", climb_rates)
+
+# Find steepest climb
+print("Steepest Climb =", max(climb_rates))
+
+# Find steepest descent
+print("Steepest Descent =", min(climb_rates))
+
+# Remove zero altitude entries
+trimmed_path = []
+
+for altitude in altitudes:
+    if altitude != 0:
+        trimmed_path.append(altitude)
+
+# Print trimmed path
+print("Trimmed Path =", trimmed_path)
