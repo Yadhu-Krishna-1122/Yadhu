@@ -1,0 +1,20 @@
+# Q2 - Drone Weight Calculator
+
+# Take body weight in kilograms
+body_weight = float(input("Enter body weight (kg): "))
+
+# Take payload weight in kilograms
+payload_weight = float(input("Enter payload weight (kg): "))
+
+# Calculate total weight
+total_weight = body_weight + payload_weight
+
+# Display total weight
+print("Total Weight =", total_weight, "kg")
+
+# Check whether total weight exceeds 2 kg
+if total_weight > 2:
+    print("Total weight is greater than 2 kg.")
+
+else:
+    print("Total weight is less than or equal to 2 kg.")
