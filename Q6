@@ -1,0 +1,43 @@
+# Q6 - Waypoint Mission Planner
+
+# Store all waypoints in a tuple
+waypoints = (
+    ("WP1", 23.0225, 72.5714, 50),
+    ("WP2", 23.0312, 72.5801, 80),
+    ("WP3", 23.0401, 72.5900, 100),
+    ("WP4", 23.0225, 72.5714, 0),
+)
+
+# Print total number of waypoints
+print("Total Waypoints =", len(waypoints))
+
+print("\nWaypoint Details")
+
+# Print details using tuple unpacking
+for waypoint in waypoints:
+    name, latitude, longitude, altitude = waypoint
+
+    print(f"{name} -> Latitude: {latitude}, Longitude: {longitude}, Altitude: {altitude} m")
+
+# Assume first waypoint has highest altitude initially
+highest_waypoint = waypoints[0]
+
+# Compare all waypoint altitudes
+for waypoint in waypoints:
+    if waypoint[3] > highest_waypoint[3]:
+        highest_waypoint = waypoint
+
+# Print highest altitude waypoint
+print("\nHighest Altitude Waypoint:")
+print(highest_waypoint)
+
+# Check if WP2 exists
+print("\nDoes WP2 exist?")
+print(("WP2", 23.0312, 72.5801, 80) in waypoints)
+
+# Try modifying tuple
+try:
+    waypoints[0][3] = 60
+
+except TypeError:
+    print("\nWaypoint data is immutable — mission integrity protected!")
