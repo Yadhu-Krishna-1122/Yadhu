@@ -1,0 +1,53 @@
+# Q11 - Recursive Waypoint Distance Calculator
+
+# Store waypoints
+waypoints = [(0, 0), (3, 4), (6, 8), (10, 8), (10, 0)]
+
+# Recursive function to calculate total distance
+def total_distance(waypoints, index=0):
+
+    # Base case
+    if index == len(waypoints) - 1:
+        return 0
+
+    # Current point
+    x1, y1 = waypoints[index]
+
+    # Next point
+    x2, y2 = waypoints[index + 1]
+
+    # Calculate distance
+    distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+
+    # Return current distance + remaining distance
+    return distance + total_distance(waypoints, index + 1)
+
+
+# Recursive function to find longest leg
+def find_longest_leg(waypoints, index=0, max_dist=0):
+
+    # Base case
+    if index == len(waypoints) - 1:
+        return max_dist
+
+    # Current point
+    x1, y1 = waypoints[index]
+
+    # Next point
+    x2, y2 = waypoints[index + 1]
+
+    # Calculate distance
+    distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+
+    # Update maximum distance
+    if distance > max_dist:
+        max_dist = distance
+
+    # Recursive call
+    return find_longest_leg(waypoints, index + 1, max_dist)
+
+
+# Display results
+print("Total Distance =", total_distance(waypoints))
+
+print("Longest Leg =", find_longest_leg(waypoints))
