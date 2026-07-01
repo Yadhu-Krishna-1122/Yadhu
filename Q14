@@ -1,0 +1,27 @@
+# Q14 - Drone Login System
+
+# Predefined username
+correct_user = "admin"
+
+# Predefined password
+correct_password = "drone123"
+
+# Take username
+user = input("Enter User ID: ")
+
+# Take password
+password = input("Enter Password: ")
+
+# Convert both to lowercase
+user = user.lower()
+
+password = password.lower()
+
+# Check credentials
+if user == correct_user and password == correct_password:
+
+    print("Drone connected successfully.")
+
+else:
+
+    print("Invalid User ID or Password.")
