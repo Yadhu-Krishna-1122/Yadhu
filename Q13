@@ -1,0 +1,35 @@
+# Q13 - Drone Coordinate Movement
+
+# Take x and y coordinates together
+x, y = map(int, input("Enter x and y coordinates: ").split())
+
+# Ask movement direction
+movement = input("Enter movement (horizontal/vertical): ").lower()
+
+# Ask number of steps
+steps = int(input("Enter number of steps: "))
+
+# Horizontal movement
+if movement == "horizontal":
+
+    for i in range(steps):
+
+        x = x + 1
+
+        print("(", x, ",", y, ")")
+
+
+# Vertical movement
+elif movement == "vertical":
+
+    for i in range(steps):
+
+        y = y + 1
+
+        print("(", x, ",", y, ")")
+
+
+# Invalid input
+else:
+
+    print("Invalid movement entered.")
